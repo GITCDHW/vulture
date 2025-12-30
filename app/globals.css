@@ -2,7 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
-html,
+/* Define CSS variables for fonts using next/font in layout.js */
+html, body {
+  @apply h-full;
+  scroll-behavior: smooth;
+}
+
 body {
-  height: 100%;
+  /* Use CSS variables defined by next/font */
+  font-family: var(--font-montserrat), sans-serif;
+  @apply bg-background text-text; /* Apply other base styles */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-playfair-display), serif;
+  @apply text-primary; /* Apply primary color for headings */
+}
+
+/* Base styles for report-like presentation */
+.container {
+  @apply max-w-4xl mx-auto p-8 bg-white shadow-lg border border-secondary rounded-lg;
+}
+
+/* Subtle elegant borders */
+.border-elegant {
+  @apply border border-gray-300 rounded-md;
 }
